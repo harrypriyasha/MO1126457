@@ -3,7 +3,7 @@ RECORD CHECK  -  my version
 ===========================
 
 Name  : Priyasha Harry
-Lane  :  AI      
+Lane  :  AI 
 Date  : 02/10/26
 
 Run it:   python template.py
@@ -14,32 +14,55 @@ Delete these instructions as you replace them with your code.
 
 
 
-label = input('Please enter your name: ')
-first = float(input('Enter your first value: '))
-second = float(input('Enter your second value: '))
-
-
-difference = second - first
-percent = (first/second) * 100
+label = input("Please enter your label: ")      
+value = float(input('Please enter your value: '))     
+limit = float(input("Please enter the limit: "))    
 
 
 
+
+
+difference = limit - value        
+percent = (value/limit) * 100       
+
+
+
+
+status = 'empty' 
+
+if percent >= 100:
+    status ='OVER LIMIT'
+elif percent >= 90 and percent < 100:         
+    status ='WARNING'
+else:
+    status ='OK'
+
+
+
+
+# =================================================================== OUTPUT
+# 4. Print the report.
+#
+#    Threshold : the three values you were given, plus status, inside a border
+#    Typical   : add difference and percent, 2 decimal places, right-aligned
+#    Excellent : wrap sections 1-4 in a loop so you can check as many records
+#                as you like in one run - type "quit" as the label to stop.
+#                Keep count of how many came back OVER LIMIT and print that
+#                once, after the loop ends.
+
+print()
 print("=" * 34)
 print(f"  RECORD CHECK  -  {label}")
 print("=" * 34)
 
-print('  The first value : ',f"{first:>10}")
-print('  The second value: ',f"{second:>10}")
-print('  The difference  : ',f"{difference:>+10.2f}")
-print('  The percentage  : ', f"{percent:>10.2f}", '%')
+# your report lines go here
 
 print("=" * 34)
 
 
 # ==========================================================================
-# 4. Before you finish:
+# 5. Before you finish:
 #
 #    [ ] Run it three times with different numbers
-#    [ ] Run it with a total of 0 and write the error in your journal
+#    [ ] Run it with a total of 0 and note the error (do not fix it yet)
 #    [ ] Check every variable name says what it holds
-#    [ ] Show it to the person next to you
